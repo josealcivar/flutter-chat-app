@@ -9,11 +9,20 @@ class BotonAzul extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return RaisedButton(
-      elevation: 2,
-      highlightElevation: 5,
-      color: Colors.blue,
-      shape: StadiumBorder(),
+    return ElevatedButton(
+      style: ButtonStyle(
+        elevation: MaterialStateProperty.all<double>(2.0),
+        // highlightElevation: 5,
+        backgroundColor: MaterialStateProperty.all<Color>(Colors.blue.shade600),
+        shape: MaterialStateProperty.all<OutlinedBorder>(
+          RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(
+              Radius.circular(30.0),
+            ),
+          ),
+        ),
+      ),
+
       onPressed: this.onPressed(),
       child: Container(
           width: double.infinity,
